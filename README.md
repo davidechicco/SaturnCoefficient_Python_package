@@ -4,19 +4,18 @@
 A Python package that computes the Saturn coefficient of a matrix to assess the quality of its UMAP dimensionality reduction.
 
 ## Installation ##
-You can run the following command to install this package:
+You can execute the following command to install this package and its dependencies:
 
-`pip3 install saturnscore`
+`pip3 install numpy pandas scipy umap-learn saturnscore`
 
 ## Example ##
 You can run the following Python code to test your package installation:
 
     import numpy as np
     import pandas as pd
-    import random
     import scipy
     import umap.umap_ as umap
-    from  saturnscore import Saturn_coefficient
+    from saturnscore import Saturn_coefficient
 
     random.seed(0)
     np.random.seed(0)  # Set random seed for reproducibility
@@ -50,7 +49,7 @@ You can run the following Python code to test your package installation:
     result = Saturn_coefficient.SaturnCoefficient(input_data, umap_output_layout)
     print(f" Saturn coefficient =  ", result)
 
-The final command should print `Saturn coefficient = 0.11817430122179944`
+The final command should print something like `Saturn coefficient = 0.11817430122179944` (this value might be different because of the random component of UMAP).
 
 ## Contact ##
 The `SaturnScore` package was developed by [Davide Chicco](https://www.DavideChicco.it). Questions should be

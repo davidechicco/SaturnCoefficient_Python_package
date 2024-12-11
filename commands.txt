@@ -1,6 +1,7 @@
 cd /my_projects/SaturnCoefficient_Python_package
 
+# change package version in the pyproject.toml
+rm dist/*.*
 python3 -m build
 python3 -m twine upload --repository testpypi dist/* --verbose
 twine upload dist/*
-
