@@ -3,6 +3,10 @@
 ## Summary ##
 A Python package that computes the Saturn coefficient of a matrix to assess the quality of its UMAP dimensionality reduction.
 
+Please notice that I developed the [Saturn coefficient package originally in R](https://doi.org/10.32614/CRAN.package.SaturnCoefficient), which is programming language I know better and is also where I was able to make more tests.
+I then ported this software package from R to Python, and here you can find the outcome.
+If you find anything that should be improved, please let me know.
+
 ## Installation ##
 You can execute the following command to install this package and its dependencies:
 
@@ -49,7 +53,7 @@ You can run the following Python code to test your package installation:
     result = Saturn_coefficient.SaturnCoefficient(input_data, umap_output_layout)
     print(f" Saturn coefficient =  ", result)
 
-The final command should print something like `Saturn coefficient = 0.11817430122179944` (this value might be different because of the random component of UMAP).
+The final command should print something like `Saturn coefficient = 0.1029461972317906` (this value might be slightly different because of the random component of UMAP).
 
 ## Contact ##
 The `SaturnScore` package was developed by [Davide Chicco](https://www.DavideChicco.it). Questions should be
