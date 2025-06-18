@@ -6,7 +6,7 @@ A Python package that computes the Saturn coefficient of a matrix to assess the 
 ## Installation ##
 You can execute the following command to install this package and its dependencies:
 
-`pip3 install numpy pandas scipy umap-learn saturnscore`
+`pip3 install numpy pandas scipy umap-learn scikit-learn saturnscore`
 
 ## Example ##
 You can run the following Python code to test your package installation:
@@ -16,8 +16,8 @@ You can run the following Python code to test your package installation:
     import scipy
     import umap.umap_ as umap
     from saturnscore import Saturn_coefficient
+    from sklearn.preprocessing import StandardScaler
 
-    random.seed(0)
     np.random.seed(0)  # Set random seed for reproducibility
     input_data = np.random.randn(120, 200)  # Generate random matrix X1
 

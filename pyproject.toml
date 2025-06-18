@@ -4,7 +4,7 @@ build-backend = "pdm.backend"
 
 [project]
 name = "saturnscore"
-version = "1.0.8"
+version = "1.2.0"
 authors = [
   { name="Davide Chicco", email="davidechicco@davidechicco.it" },
 ]
