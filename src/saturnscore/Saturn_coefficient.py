@@ -3,6 +3,7 @@ import pandas as pd
 import scipy
 import umap.umap_ as umap
 from scipy.spatial import distance
+from sklearn.preprocessing import StandardScaler
 
 def AdjustedRV(X1, X2, version='Maye', center=True):
     # Helper function to calculate the trace of a matrix
@@ -62,15 +63,11 @@ def AdjustedRV(X1, X2, version='Maye', center=True):
 
 def SaturnCoefficient(original_matrix, umap_output_layout):
 
-    # Center the data (subtract the mean)
-    centered_data_original_matrix = original_matrix - np.mean(original_matrix, axis=0)
-    # Scale to the [-1, 1] interval
-    original_matrix_norm = centered_data_original_matrix / np.max(np.abs(centered_data_original_matrix), axis=0)
+    scaler = StandardScaler()
 
-    # Center the data (subtract the mean)
-    centered_data_umap_output_layout = umap_output_layout - np.mean(umap_output_layout, axis=0)
-    # Scale to the [-1, 1] interval
-    umap_output_layout_norm = centered_data_umap_output_layout / np.max(np.abs(centered_data_umap_output_layout), axis=0)
+    # Fit and transform the data
+    original_matrix_norm = scaler.fit_transform(original_matrix)
+    umap_output_layout_norm = scaler.fit_transform(umap_output_layout)
 
     original_matrix_norm_dist = distance.squareform(distance.pdist(original_matrix_norm))
     umap_output_layout_dist = distance.squareform(distance.pdist(umap_output_layout_norm))
